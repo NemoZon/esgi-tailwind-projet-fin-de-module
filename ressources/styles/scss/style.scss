@@ -1,0 +1,196 @@
+// Variables
+$primary-color: #e44d26;
+$text-color: #fff;
+$background-color: #262733;
+$input-background: rgba(255, 255, 255, 0.5);
+$border-color: #fff;
+$footer-color: #e44d26;
+$mobile-breakpoint: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile-breakpoint}) {
+        @content;
+    }
+}
+@include mobile {
+  .back,
+  .front {
+      display: none;
+  }
+  .social-icons-bottom{
+    bottom: 0px;
+  }
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: $background-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header, footer {
+    width: 100%;
+}
+
+
+  .contact-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+
+      @include mobile {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+      }
+  }
+  .image-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 400px;
+  }
+  .back{
+    position: absolute;
+    z-index: -1;
+    bottom: 391px;
+    left: -15px;
+  }
+  .front{
+    width: 120%;
+    position: absolute;
+    z-index: 9999;
+    top: 52%;
+    right: 28px;
+  }
+  .social-icons-bottom {
+      display: flex;
+      position: absolute;    
+      bottom: 60px;
+      z-index: 99999999;
+
+      a {
+          background: $primary-color;
+          border-radius: 50%;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          color: $text-color;
+          font-size: 18px;
+          text-decoration: none;
+          
+
+          &:hover {
+              background: lighten($primary-color, 10%);
+              text-decoration: none;
+          }
+      }
+  }
+
+.form-container {
+    width: 50%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    
+    .text-container{
+      font-size: 65px; // Taille plus grande
+        font-weight: bold;
+        color: #f5f5dc; // Beige
+        margin-bottom: 20px; // Espacement avec le formulaire
+        text-align: left; // Centrage du texte
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; // Espacement entre les éléments du formulaire
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        color: $text-color;
+    }
+
+    input, textarea {
+        background: $input-background;
+        border: none;
+        border-bottom: 2px solid $border-color;
+        padding: 10px;
+        font-size: 16px;
+        color: $text-color;
+        outline: none;
+        transition: border-bottom-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+        border-bottom-color: $primary-color;
+    }
+
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    button {
+        background: $primary-color;
+        color: $text-color;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+            background: lighten($primary-color, 10%);
+        }
+    }
+}
+
+.back-section {
+    text-align: left;
+    width: 100%;
+    margin-top: 40px;
+
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 20px 0;
+        display: block;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+footer {
+    background: $footer-color;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 16px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

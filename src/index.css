@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.outlined-text {
+  -webkit-text-stroke: 3px #eee2d4;
+}
