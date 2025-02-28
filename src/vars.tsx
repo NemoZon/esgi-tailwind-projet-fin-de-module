@@ -6,11 +6,11 @@ export const navLinks = [
   },
   {
     title: 'About Me',
-    href: '/me',
+    href: '/aboutme',
   },
   {
     title: 'Working Together',
-    href: '/collaborate',
+    href: '/workingtogether',
   },
   {
     title: 'Contact',
